@@ -30,10 +30,7 @@ public class Form extends javax.swing.JFrame {
         lista2 = objart.ListaArticulos();
         tabla.addColumn("Codigo");
         tabla.addColumn("Nombre");
-        tabla.addColumn("Unidad");
         tabla.addColumn("Precio");
-        tabla.addColumn("Stock");
-        tabla.addColumn("Marca");
         tabla.setRowCount(lista2.size());
         int i = 0;
         for(Data x: lista2)
@@ -52,10 +49,7 @@ public class Form extends javax.swing.JFrame {
     {
         this.JtfCodigo.setText("");
         this.JtfNombre.setText("");
-        this.JtfUdeMedida.setText("");
         this.JtfPrecio.setText("");
-        this.JtfCantidad.setText("");
-        this.JtfMarca.setText("");
     }
 
     /**
@@ -78,6 +72,12 @@ public class Form extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        JtfCodigo = new javax.swing.JTextField();
+        JtfNombre = new javax.swing.JTextField();
+        JtfPrecio = new javax.swing.JTextField();
+        jlbCodigo = new javax.swing.JLabel();
+        jlbNombre = new javax.swing.JLabel();
+        jlbPrecio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,30 +121,57 @@ public class Form extends javax.swing.JFrame {
 
         jLabel2.setText("FACTURA");
 
+        JtfCodigo.setText("jTextField2");
+
+        JtfNombre.setText("jTextField3");
+
+        JtfPrecio.setText("jTextField4");
+
+        jlbCodigo.setText("Código:");
+
+        jlbNombre.setText("Coctel:");
+
+        jlbPrecio.setText("Precio:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnSalir)
-                    .addComponent(btnPagar)
-                    .addComponent(btnFacturar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEliminar)
+                            .addComponent(btnSalir)
+                            .addComponent(btnPagar)
+                            .addComponent(btnFacturar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbCodigo)
+                            .addComponent(jlbNombre)
+                            .addComponent(jlbPrecio))
+                        .addGap(113, 113, 113)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JtfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JtfPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(179, 179, 179))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1)
+                            .addComponent(jScrollPane2))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(179, 179, 179))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +185,7 @@ public class Form extends javax.swing.JFrame {
                         .addComponent(btnEliminar)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37))
                     .addGroup(layout.createSequentialGroup()
@@ -171,12 +198,25 @@ public class Form extends javax.swing.JFrame {
                         .addGap(209, 209, 209))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 95, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JtfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbCodigo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbNombre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JtfPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbPrecio))))
+                .addGap(106, 106, 106)
+                .addComponent(jLabel1)
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -218,6 +258,9 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JtfCodigo;
+    private javax.swing.JTextField JtfNombre;
+    private javax.swing.JTextField JtfPrecio;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnFacturar;
     private javax.swing.JButton btnPagar;
@@ -229,5 +272,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTable jTableHistorial;
     private javax.swing.JTable jTableList;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jlbCodigo;
+    private javax.swing.JLabel jlbNombre;
+    private javax.swing.JLabel jlbPrecio;
     // End of variables declaration//GEN-END:variables
 }
