@@ -1,2 +1,4 @@
 /build/
 *.properties
+*.class
+build/classes/Capa_Presentacion/Form.class
