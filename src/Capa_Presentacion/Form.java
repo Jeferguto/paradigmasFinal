@@ -7,6 +7,7 @@ package Capa_Presentacion;
 import Capa_Negocio.DataArticulo;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,10 +23,9 @@ public class Form extends javax.swing.JFrame {
         initComponents();
         ListarArticulos();
     }
-    
-    public void ListarArticulos()
-    {
-         DefaultTableModel tabla = new DefaultTableModel();
+
+    public void ListarArticulos() {
+        DefaultTableModel tabla = new DefaultTableModel();
         DataArticulo objart = new DataArticulo();
         ArrayList<DataArticulo> lista2 = new ArrayList();
         lista2 = objart.ListaArticulos();
@@ -34,17 +34,16 @@ public class Form extends javax.swing.JFrame {
         tabla.addColumn("Precio");
         tabla.setRowCount(lista2.size());
         int i = 0;
-        for(DataArticulo x: lista2)
-        {
+        for (DataArticulo x : lista2) {
             tabla.setValueAt(x.getArt_cod(), i, 0);
             tabla.setValueAt(x.getArt_nom(), i, 1);
             tabla.setValueAt(x.getArt_pre(), i, 2);
-            i++;            
+            i++;
         }
         this.jTableHistorial.setModel(tabla);
-    }    
-    public void LimpiarCajasTexto()
-    {
+    }
+
+    public void LimpiarCajasTexto() {
         this.JtfCodigo.setText("");
         this.JtfNombre.setText("");
         this.JtfPrecio.setText("");
@@ -113,12 +112,27 @@ public class Form extends javax.swing.JFrame {
         JBtPagar.setText("Pagar");
 
         JBtFacturar.setText("Facturar");
+        JBtFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtFacturarActionPerformed(evt);
+            }
+        });
 
         JBtEliminar.setText("Eliminar");
+        JBtEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtEliminarActionPerformed(evt);
+            }
+        });
 
         JtfFactura.setText("facturona");
 
         JBtSalir.setText("Salir");
+        JBtSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtSalirActionPerformed(evt);
+            }
+        });
 
         JlbListProduct.setText("LISTA PRODUCTOS");
 
@@ -218,7 +232,6 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(JtfFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
                                 .addComponent(JBtPagar)
                                 .addGap(117, 117, 117)
                                 .addComponent(JBtFacturar)
@@ -256,6 +269,48 @@ public class Form extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBtSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtSalirActionPerformed
+        // TODO add your handling code here:
+        int r = JOptionPane.showConfirmDialog(null, "Esta Seguro?");
+        if (r == 0) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_JBtSalirActionPerformed
+
+    private void JBtEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtEliminarActionPerformed
+        // TODO add your handling code here:
+        int Res = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el articulo: " + this.JtfCodigo.getText());
+        if (Res == 0) {
+            DataArticulo objart = new DataArticulo();
+            objart.setArt_cod(this.JtfCodigo.getText());
+            JOptionPane.showMessageDialog(null, objart.EliminaArticulo());
+            ListarArticulos();
+            JOptionPane.showMessageDialog(null, "Articulo Eliminado");
+        }
+    }//GEN-LAST:event_JBtEliminarActionPerformed
+
+    private void JBtFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtFacturarActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel pedidoTableModel = (DefaultTableModel) jTablePedido.getModel();
+        int rowCount = pedidoTableModel.getRowCount();
+
+        StringBuilder facturaText = new StringBuilder();
+        facturaText.append("FACTURA:\n");
+
+        for (int i = 0; i < rowCount; i++) {
+            String codigo = pedidoTableModel.getValueAt(i, 0).toString();
+            String nombre = pedidoTableModel.getValueAt(i, 1).toString();
+            String precio = pedidoTableModel.getValueAt(i, 2).toString();
+
+            facturaText.append("Producto ").append(i + 1).append(": ")
+                    .append("Código: ").append(codigo)
+                    .append(", Nombre: ").append(nombre)
+                    .append(", Precio: ").append(precio).append("\n");
+        }
+
+        JtfFactura.setText(facturaText.toString());
+    }//GEN-LAST:event_JBtFacturarActionPerformed
 
     /**
      * @param args the command line arguments
