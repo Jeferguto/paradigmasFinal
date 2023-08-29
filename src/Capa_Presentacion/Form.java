@@ -40,7 +40,7 @@ public class Form extends javax.swing.JFrame {
             tabla.setValueAt(x.getArt_pre(), i, 2);
             i++;
         }
-        this.jTableHistorial.setModel(tabla);
+        this.jTableList.setModel(tabla);
     }
 
     public void LimpiarCajasTexto() {

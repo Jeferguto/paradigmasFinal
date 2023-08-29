@@ -10,11 +10,10 @@ public class Conexion {
     public Conexion() {
     }
 
-    public ResultSet Listar(String tabla) {
+    public ResultSet Listar(String cad) {
         try {
             Connection cn = DriverManager.getConnection(url, user, pwd);
-            String consulta = "SELECT * FROM " + tabla;
-            PreparedStatement da = cn.prepareStatement(consulta);
+            PreparedStatement da = cn.prepareStatement(cad);
             ResultSet tbl = da.executeQuery();
             return tbl;
         } catch (SQLException e) {
