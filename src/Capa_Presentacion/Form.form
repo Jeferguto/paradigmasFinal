@@ -72,85 +72,83 @@
               <EmptySpace pref="35" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="JtfFactura" min="-2" pref="452" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
                       <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="JlbHisPedidos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="JtfFactura" min="-2" pref="452" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="JlbFactura" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="JlbHisPedidos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="JBtEditar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                      <Component id="JBtEliminar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                       <Component id="JlbFactura" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="JtfFactura" min="-2" pref="230" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="JBtEliminar" min="-2" max="-2" attributes="0"/>
+                          <Component id="JtfFactura" min="-2" pref="230" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="JBtPagar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="JBtFacturar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="JBtSalir" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="JlbHisPedidos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="399" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="JBtPagar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="JBtFacturar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="JBtSalir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="JlbHisPedidos" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JtfCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JlbCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JtfNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JlbNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JtfPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JlbPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="JlbListProduct" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="440" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="239" max="-2" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Component id="JlbPedido" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="365" max="-2" attributes="0"/>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JtfCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JlbCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JtfNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JlbNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JtfPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JlbPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="JlbListProduct" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="239" max="-2" attributes="0"/>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
-              <Component id="JlbPedido" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane3" min="-2" pref="365" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
       </Group>
