@@ -145,6 +145,11 @@ public class Form extends javax.swing.JFrame {
         JlbPrecio.setText("Precio:");
 
         JBtEditar.setText("Editar");
+        JBtEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtEditarActionPerformed(evt);
+            }
+        });
 
         JlbHisPedidos.setText("HISTORIAL PEDIDOS");
 
@@ -311,6 +316,16 @@ public class Form extends javax.swing.JFrame {
 
         JtfFactura.setText(facturaText.toString());
     }//GEN-LAST:event_JBtFacturarActionPerformed
+
+    private void JBtEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtEditarActionPerformed
+        // TODO add your handling code here:
+        DataArticulo objart = new DataArticulo();
+        objart.setArt_cod(this.JtfCodigo.getText());
+        objart.setArt_nom(this.JtfNombre.getText());
+        objart.setArt_pre(Double.parseDouble(this.JtfPrecio.getText()));
+        JOptionPane.showMessageDialog(null, objart.EditarArticulo());
+        ListarArticulos();
+    }//GEN-LAST:event_JBtEditarActionPerformed
 
     /**
      * @param args the command line arguments
